@@ -35,6 +35,7 @@ public class FormaPagamentoTest {
     assertEquals("Cartão de débito", formaPagamentoOptional.get().getDescricao());
   }
 
+  @Test
   @Order(2)
   public void mustGenerateErrorFormaPagamentoDescricaoIsRequiredTest(){
     Assertions.assertThrows(ConstraintViolationException.class, () -> {

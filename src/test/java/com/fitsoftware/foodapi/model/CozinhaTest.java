@@ -35,6 +35,7 @@ public class CozinhaTest {
     assertEquals("Brasileira", cozinhaOptional.get().getNome());
   }
 
+  @Test
   @Order(2)
   public void mustGenerateErrorCozinhaNameIsRequiredTest() {
     Assertions.assertThrows(ConstraintViolationException.class, () -> {
@@ -52,7 +53,7 @@ public class CozinhaTest {
 
   @Test
   @Order(4)
-  public void mustSaveEstadoTest() {
+  public void mustSaveCozinhaTest() {
     cozinha = Cozinha.builder().nome("Testing").build();
     cozinha = cozinhaRepository.save(cozinha);
     assertEquals("Testing", cozinha.getNome());
@@ -60,7 +61,7 @@ public class CozinhaTest {
 
   @Test
   @Order(5)
-  public void mustDeleteEstadoByIdTest() {
+  public void mustDeleteCozinhaByIdTest() {
     cozinhaRepository.deleteById(4l);
     List<Cozinha> cozinhas = cozinhaRepository.findAll();
     assertEquals(3, cozinhas.size());

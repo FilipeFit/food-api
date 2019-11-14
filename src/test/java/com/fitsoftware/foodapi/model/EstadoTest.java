@@ -35,6 +35,7 @@ public class EstadoTest {
     assertEquals("Bahia", estadoOptional.get().getNome());
   }
 
+  @Test
   @Order(2)
   public void mustGenerateErrorEstadoNameIsRequiredTest(){
     Assertions.assertThrows(ConstraintViolationException.class, () -> {

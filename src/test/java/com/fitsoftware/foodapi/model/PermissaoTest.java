@@ -35,6 +35,7 @@ public class PermissaoTest {
     assertEquals("Pesquisa Cidade", permissaoOptional.get().getNome());
   }
 
+  @Test
   @Order(2)
   public void mustGenerateErrorPermissaoNomeIsRequiredTest(){
     Assertions.assertThrows(ConstraintViolationException.class, () -> {
@@ -43,6 +44,7 @@ public class PermissaoTest {
     });
   }
 
+  @Test
   @Order(3)
   public void mustGenerateErrorPermissaoDescricaoIsRequiredTest(){
     Assertions.assertThrows(ConstraintViolationException.class, () -> {

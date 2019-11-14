@@ -18,9 +18,8 @@ class CadastroCozinhaServiceTest {
   private CozinhaRepository cozinhaRepository;
 
   @BeforeEach
-  public void setUp(){
+  public void setUp() {
     MockitoAnnotations.initMocks(this);
-
     cadastroCozinhaService = new CadastroCozinhaService(cozinhaRepository);
   }
 
@@ -29,11 +28,12 @@ class CadastroCozinhaServiceTest {
     Cozinha cozinha = Cozinha.builder().nome("Testing")
         .id(1l)
         .build();
+
     Mockito.when(cozinhaRepository.save(cozinha)).thenReturn(cozinha);
     Cozinha cozinhaSalva = cadastroCozinhaService.save(cozinha);
-
+    
+    Mockito.verify(cozinhaRepository, Mockito.times(1));
     assertEquals(cozinhaSalva, cozinha);
-
   }
 
 }

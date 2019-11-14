@@ -18,9 +18,9 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "estado")
+@Table(name = "cozinha")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Estado {
+public class Cozinha {
 
   @Id
   @EqualsAndHashCode.Include

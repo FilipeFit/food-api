@@ -18,9 +18,9 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "estado")
+@Table(name = "forma_pagamento ")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Estado {
+public class FormaPagamento {
 
   @Id
   @EqualsAndHashCode.Include
@@ -28,5 +28,5 @@ public class Estado {
   private Long id;
 
   @NotBlank
-  private String nome;
+  private String descricao;
 }
